@@ -1,0 +1,31 @@
+    <ion-header>
+      <ion-navbar>
+      <ion-title>New event</ion-title>
+      </ion-navbar>
+    </ion-header>
+    <ion-content padding>
+    <form [formGroup]="eventsadd" (ngSubmit)="logForm()">
+      <ion-item>
+        <ion-label>Name</ion-label>
+        <ion-input type="text" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Description</ion-label>
+        <ion-textarea formControlName="description" ></ion-textarea>
+      </ion-item>
+      <ion-item>
+       <ion-label>Start date</ion-label>
+       <ion-datetime displayFormat="DD-MM-YYYY HH:mm" formControlName="startdate" ></ion-datetime>
+      </ion-item>
+      <ion-item>
+       <ion-label>End date</ion-label>
+       <ion-datetime displayFormat="DD-MM-YYYY HH:mm" formControlName="enddate" ></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>Address</ion-label>
+        <ion-input type="text" formControlName="address" ></ion-input>
+      </ion-item>
+      
+      <button ion-button type="submit" [disabled]="!eventsadd.valid">Submit</button>
+    </form>
+    </ion-content>

@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Main</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="logout()">
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>Welcome inside, {{username}}!</h3>
+  Your Email is: {{email}}
+
+
+<!--  <button ion-button color="positive" (click)="takePicture()">Take a Picture</button>
+
+  Latest Picture:
+  <div class="image"><img [src]="base64Image" *ngIf="base64Image" /></div>
+<button ion-button color="positive" (click)="Upload()">Test a Upload</button>
+-->
+
+    <!-- <ion-avatar>
+    <img src="http://orgeventos.growner.com/files/1502051050655.jpg" >
+    </ion-avatar>-->
+    <ion-avatar>
+    <img src="{{pathForImage(lastImage)}}" [hidden]="lastImage === null" >
+    </ion-avatar>
+    
+ <!-- <h3 [hidden]="lastImage !== null">Please Select Image!</h3>-->
+ 
+<!--<ion-footer>-->
+  <ion-toolbar color="primary">
+    <ion-buttons>
+      <button ion-button icon-left (click)="presentActionSheet()">
+        <ion-icon name="camera"></ion-icon>Select Image
+      </button>
+      <button ion-button icon-left (click)="uploadImage()" [disabled]="lastImage === null">
+        <ion-icon name="cloud-upload"></ion-icon>Upload
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+<!--</ion-footer>-->
+
+</ion-content>
